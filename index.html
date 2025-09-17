@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duarte Impressões - Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
+        .header {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #ff00ff; /* Cor rosa vibrante, baseada no ícone */
+        }
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+        }
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: grayscale(80%) brightness(150%) contrast(150%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #f3f4f6;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #ff00ff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #e000e0;
+        }
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background-color: #ff00ff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="header bg-white text-gray-900 shadow-lg">
+        <div class="container flex justify-between items-center py-4">
+            <!-- Logo na barra de navegação -->
+            <a href="#home">
+                <img src="https://placehold.co/150x50/000000/ffffff?text=Logo" alt="Logo Duarte Impressões" class="h-10">
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#impressions" class="nav-link">Impressões</a>
+                <a href="#clothing" class="nav-link">Malharia</a>
+                <a href="#services" class="nav-link">Serviços</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden text-gray-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-100 p-4">
+        <a href="#home" class="block py-2 text-center text-lg nav-link">Início</a>
+        <a href="#impressions" class="block py-2 text-center text-lg nav-link">Impressões</a>
+        <a href="#clothing" class="block py-2 text-center text-lg nav-link">Malharia</a>
+        <a href="#services" class="block py-2 text-center text-lg nav-link">Serviços</a>
+        <a href="#contact" class="block py-2 text-center text-lg nav-link">Contato</a>
+    </div>
+
+    <!-- Hero Section with Video Background -->
+    <main>
+        <section id="home" class="hero text-center py-20 px-4">
+            <!-- Video de fundo para textura -->
+            <video autoplay loop muted playsinline class="video-bg">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-ink-in-water-3914-large.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div class="hero-content bg-white bg-opacity-70 p-6 rounded-xl inline-block text-gray-900">
+                <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">Sua Ideia, Nossa Impressão</h2>
+                <p class="text-lg sm:text-xl font-light max-w-xl mx-auto mb-8">Personalize roupas, brindes, impressos e muito mais. Qualidade e entrega rápida.</p>
+                <a href="#contact" class="btn-primary font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">Fazer meu Pedido</a>
+            </div>
+        </section>
+
+        <!-- Mascot Section -->
+        <section class="py-16 px-4 flex flex-col items-center text-center">
+            <div class="relative w-48 h-48 md:w-64 md:h-64">
+                <img src="https://placehold.co/256x256/ff00ff/ffffff?text=Duarte" alt="Mascote Duartinho" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-pink-500">
+                <div class="absolute bottom-0 right-0 p-2 bg-pink-500 rounded-full shadow-lg transform translate-x-2 translate-y-2">
+                    <span class="text-white text-sm font-bold">Compre Agora!</span>
+                </div>
+            </div>
+            <h3 class="text-3xl sm:text-4xl font-extrabold mt-8 mb-4">Compre Agora com o Duartinho!</h3>
+            <p class="text-lg text-gray-600 max-w-lg mx-auto">Navegue pelas nossas categorias e preencha o formulário abaixo para fazer seu pedido direto no WhatsApp.</p>
+        </section>
+
+        <!-- Product Categories Section (Only Display) -->
+        <section id="impressions" class="py-16 px-4">
+            <div class="container">
+                <h3 class="text-4xl font-bold mb-10 text-center">Impressões</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">🖨️</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Cartões de Visita</h4>
+                        <p class="text-gray-600 mb-4">Impressão de alta qualidade para o seu negócio.</p>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">📄</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Flyers e Panfletos</h4>
+                        <p class="text-gray-600 mb-4">Divulgue seu evento ou promoção com estilo.</p>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">🖼️</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Quadros e Banners</h4>
+                        <p class="text-gray-600 mb-4">Decore seu espaço com impressões personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="clothing" class="py-16 px-4">
+            <div class="container">
+                <h3 class="text-4xl font-bold mb-10 text-center">Malharia</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Clothing Card 1 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">👕</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Camisetas Personalizadas</h4>
+                        <p class="text-gray-600 mb-4">Crie sua própria estampa em camisetas de alta qualidade.</p>
+                    </div>
+                    <!-- Clothing Card 2 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">🧥</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Moletons</h4>
+                        <p class="text-gray-600 mb-4">Moletons confortáveis com seu design exclusivo.</p>
+                    </div>
+                    <!-- Clothing Card 3 -->
+                    <div class="product-card rounded-lg overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                        <div class="icon-container mb-4">
+                            <span class="text-3xl">🧢</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold mb-2">Bonés e Acessórios</h4>
+                        <p class="text-gray-600 mb-4">Personalize bonés e outros acessórios de vestuário.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-16 px-4">
+            <div class="container text-center">
+                <h3 class="text-4xl font-bold mb-10">Nossos Serviços</h3>
+                <ul class="list-none space-y-4">
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">👕</span>
+                        <p class="text-lg">CAMISAS</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">🖼️</span>
+                        <p class="text-lg">PAINÉIS</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">🌬️</span>
+                        <p class="text-lg">WINDBANNERS</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">🏳️</span>
+                        <p class="text-lg">BANNERS</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">⏱️</span>
+                        <p class="text-lg">GRÁFICA RÁPIDA</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">⚽</span>
+                        <p class="text-lg">CONJUNTOS ESPORTIVOS</p>
+                    </li>
+                    <li class="bg-gray-200 p-4 rounded-lg shadow-lg flex items-center justify-center space-x-4">
+                        <span class="text-2xl">🎨</span>
+                        <p class="text-lg">TINTAS SUBLIMÁTICAS</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-16 px-4 bg-gray-200 rounded-t-3xl text-gray-900">
+            <div class="container text-center">
+                <h3 class="text-4xl font-bold mb-8">Finalize sua Compra com o Duartinho!</h3>
+                <p class="text-lg max-w-xl mx-auto mb-8 text-gray-600">Preencha seus dados para agilizar o contato e a finalização do seu pedido.</p>
+                <form id="purchaseForm" class="max-w-2xl mx-auto space-y-6">
+                    <div>
+                        <input type="text" placeholder="Seu Nome" id="nome-cliente" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900" required>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Seu Endereço" id="endereco-cliente" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900" required>
+                    </div>
+                    <div>
+                        <select id="forma-pagamento" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900" required>
+                            <option value="" disabled selected>Forma de Pagamento</option>
+                            <option value="pix">PIX</option>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="boleto">Boleto</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+                        <input type="number" placeholder="Quantidade" id="quantidade-cliente" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900" min="1" required>
+                        <input type="text" placeholder="Nome do Produto" id="produto-cliente" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900" required>
+                    </div>
+                    <button type="submit" class="btn-primary py-3 px-8 rounded-full font-bold">Enviar Pedido no WhatsApp</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white text-gray-600 py-6 text-center shadow-inner">
+            <div class="container">
+                <!-- Logo no rodapé -->
+                <img src="https://placehold.co/100x30/000000/ffffff?text=Logo" alt="Logo Duarte Impressões" class="h-8 mx-auto mb-4">
+                <p>&copy; 2024 Duarte Impressões. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // JavaScript para o menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript para o novo formulário de pedido
+        document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById('nome-cliente').value;
+            const endereco = document.getElementById('endereco-cliente').value;
+            const formaPagamento = document.getElementById('forma-pagamento').value;
+            const quantidade = document.getElementById('quantidade-cliente').value;
+            const produto = document.getElementById('produto-cliente').value;
+
+            if (nome && endereco && formaPagamento && quantidade && produto) {
+                const phoneNumber = '5591984939744'; // Número de telefone da empresa Duarte Impressões
+                const message = `Olá, Duartinho! Tenho um pedido para você:\n\n*Nome:* ${nome}\n*Produto:* ${produto}\n*Quantidade:* ${quantidade}\n*Endereço:* ${endereco}\n*Forma de Pagamento:* ${formaPagamento}`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappURL, '_blank');
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+    </script>
+
+</body>
+</html>
